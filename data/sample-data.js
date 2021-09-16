@@ -82,4 +82,8 @@ const warriorsGames = [{
       isWinner: false
     }
   }
-]
+];
+
+export function gamesData() {
+  return warriorsGames;
+} 

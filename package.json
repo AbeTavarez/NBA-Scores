@@ -1,0 +1,19 @@
+{
+  "name": "nba-scores",
+  "version": "1.0.0",
+  "description": "NBA Score Chart",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbeTavarez/NBA-Scores.git"
+  },
+  "author": "Abraham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbeTavarez/NBA-Scores/issues"
+  },
+  "homepage": "https://github.com/AbeTavarez/NBA-Scores#readme"
+}
