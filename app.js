@@ -90,7 +90,7 @@ const warriorsGames = [
 
 // =========================== Make Chart
 
-const makeChart = (games) => {
+const makeChart = (games, targetTeam) => {
   const ul = document.createElement("ul");
 
   for (let game of games) {
@@ -98,13 +98,19 @@ const makeChart = (games) => {
     
     li.innerHTML = getScoreLine(game);
 
-    // const warriors = hTeam === "Golden State" ? homeTeam : awayTeam;
-    // li.classList.add(warriors.isWinner ? "win" : "loss");
+    li.classList.add(isWinner(game, targetTeam) ? 'win' : 'loss');
+
+    isWinner(game, targetTeam);
 
     ul.append(li);
   }
   return ul
 };
+
+const isWinner = ({homeTeam, awayTeam} = game, targetTeam) => {
+    const target = homeTeam.team === targetTeam ? homeTeam : awayTeam;
+    return target.isWinner;
+}
 
 // ========================== getScoreLine
 
@@ -123,5 +129,7 @@ const getScoreLine = ({ homeTeam, awayTeam }) => {
     return `${teamNames} ${scoreLine}`;
 };
 
-const chart1 = makeChart(warriorsGames);
-document.body.append(chart1);
+const chart1 = makeChart(warriorsGames, 'Golden State');
+const chart2 = makeChart(warriorsGames, 'Houston');
+document.getElementById('gs').append(chart1);
+document.getElementById('hr').append(chart2)
